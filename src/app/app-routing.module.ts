@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MenuComponent } from './shared/components/menu/menu.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./products/products.module').then( m => m.ProductsModule),
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
